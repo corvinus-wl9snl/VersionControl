@@ -15,6 +15,9 @@ namespace UserMaintenance
         public Form1()
         {
             InitializeComponent();
+            labelFN.Text = Resource.FirstName;
+            labelLN.Text = Resource.LastName;
+            buttonAdd.Text = Resource.Add;
         }
     }
 }
