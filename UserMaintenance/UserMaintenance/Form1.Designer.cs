@@ -29,22 +29,22 @@ namespace UserMaintenance
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listUsers = new System.Windows.Forms.ListBox();
             this.labelFN = new System.Windows.Forms.Label();
             this.labelLN = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxFN = new System.Windows.Forms.TextBox();
+            this.textBoxLN = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listUsers
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(30, 86);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(292, 344);
-            this.listBox1.TabIndex = 0;
+            this.listUsers.FormattingEnabled = true;
+            this.listUsers.ItemHeight = 20;
+            this.listUsers.Location = new System.Drawing.Point(30, 86);
+            this.listUsers.Name = "listUsers";
+            this.listUsers.Size = new System.Drawing.Size(292, 344);
+            this.listUsers.TabIndex = 0;
             // 
             // labelFN
             // 
@@ -64,19 +64,20 @@ namespace UserMaintenance
             this.labelLN.TabIndex = 2;
             this.labelLN.Text = "label2";
             // 
-            // textBox1
+            // textBoxFN
             // 
-            this.textBox1.Location = new System.Drawing.Point(511, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxFN.Location = new System.Drawing.Point(511, 154);
+            this.textBoxFN.Name = "textBoxFN";
+            this.textBoxFN.Size = new System.Drawing.Size(192, 26);
+            this.textBoxFN.TabIndex = 3;
+            this.textBoxFN.TextChanged += new System.EventHandler(this.textBoxFN_TextChanged);
             // 
-            // textBox2
+            // textBoxLN
             // 
-            this.textBox2.Location = new System.Drawing.Point(511, 202);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 26);
-            this.textBox2.TabIndex = 4;
+            this.textBoxLN.Location = new System.Drawing.Point(511, 202);
+            this.textBoxLN.Name = "textBoxLN";
+            this.textBoxLN.Size = new System.Drawing.Size(192, 26);
+            this.textBoxLN.TabIndex = 4;
             // 
             // buttonAdd
             // 
@@ -86,6 +87,7 @@ namespace UserMaintenance
             this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "button1";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // Form1
             // 
@@ -93,11 +95,11 @@ namespace UserMaintenance
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLN);
+            this.Controls.Add(this.textBoxFN);
             this.Controls.Add(this.labelLN);
             this.Controls.Add(this.labelFN);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listUsers);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -107,11 +109,11 @@ namespace UserMaintenance
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listUsers;
         private System.Windows.Forms.Label labelFN;
         private System.Windows.Forms.Label labelLN;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxFN;
+        private System.Windows.Forms.TextBox textBoxLN;
         private System.Windows.Forms.Button buttonAdd;
     }
 }

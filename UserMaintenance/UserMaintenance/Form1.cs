@@ -7,17 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserMaintenance.Entities;
 
 namespace UserMaintenance
 {
     public partial class Form1 : Form
     {
+        BindingList<User> users = new BindingList<User>();
         public Form1()
         {
             InitializeComponent();
             labelFN.Text = Resource.FirstName;
             labelLN.Text = Resource.LastName;
             buttonAdd.Text = Resource.Add;
+
+            listUsers.DataSource = users;
+            listUsers.ValueMember = "ID";
+            listUsers.DisplayMember = "FirstName";
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            var u = new User()
+            {
+                LastName = textBoxLN.Text,
+                FirstName = textBoxFN.Text
+            };
+            users.Add(u);
+        }
+
+        private void textBoxFN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
