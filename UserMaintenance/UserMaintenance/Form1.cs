@@ -17,21 +17,19 @@ namespace UserMaintenance
         public Form1()
         {
             InitializeComponent();
-            labelFN.Text = Resource.FirstName;
-            labelLN.Text = Resource.LastName;
+            labelFN.Text = Resource.FullName;
             buttonAdd.Text = Resource.Add;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
-            listUsers.DisplayMember = "FirstName";
+            listUsers.DisplayMember = "FullName";
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             var u = new User()
             {
-                LastName = textBoxLN.Text,
-                FirstName = textBoxFN.Text
+                FullName = textBoxFN.Text
             };
             users.Add(u);
         }
