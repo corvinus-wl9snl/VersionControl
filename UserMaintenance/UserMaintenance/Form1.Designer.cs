@@ -34,6 +34,7 @@ namespace UserMaintenance
             this.textBoxFN = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonFile = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listUsers
@@ -74,7 +75,7 @@ namespace UserMaintenance
             // 
             // buttonFile
             // 
-            this.buttonFile.Location = new System.Drawing.Point(458, 289);
+            this.buttonFile.Location = new System.Drawing.Point(458, 323);
             this.buttonFile.Name = "buttonFile";
             this.buttonFile.Size = new System.Drawing.Size(245, 31);
             this.buttonFile.TabIndex = 6;
@@ -82,11 +83,22 @@ namespace UserMaintenance
             this.buttonFile.UseVisualStyleBackColor = true;
             this.buttonFile.Click += new System.EventHandler(this.buttonFile_Click);
             // 
+            // buttonDel
+            // 
+            this.buttonDel.Location = new System.Drawing.Point(458, 289);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(245, 31);
+            this.buttonDel.TabIndex = 7;
+            this.buttonDel.Text = "button";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxFN);
@@ -106,6 +118,7 @@ namespace UserMaintenance
         private System.Windows.Forms.TextBox textBoxFN;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonFile;
+        private System.Windows.Forms.Button buttonDel;
     }
 }
 
