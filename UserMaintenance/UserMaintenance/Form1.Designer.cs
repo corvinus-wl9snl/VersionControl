@@ -33,6 +33,7 @@ namespace UserMaintenance
             this.labelFN = new System.Windows.Forms.Label();
             this.textBoxFN = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listUsers
@@ -71,11 +72,22 @@ namespace UserMaintenance
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // buttonFile
+            // 
+            this.buttonFile.Location = new System.Drawing.Point(458, 289);
+            this.buttonFile.Name = "buttonFile";
+            this.buttonFile.Size = new System.Drawing.Size(245, 31);
+            this.buttonFile.TabIndex = 6;
+            this.buttonFile.Text = "button";
+            this.buttonFile.UseVisualStyleBackColor = true;
+            this.buttonFile.Click += new System.EventHandler(this.buttonFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonFile);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxFN);
             this.Controls.Add(this.labelFN);
@@ -93,6 +105,7 @@ namespace UserMaintenance
         private System.Windows.Forms.Label labelFN;
         private System.Windows.Forms.TextBox textBoxFN;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonFile;
     }
 }
 
