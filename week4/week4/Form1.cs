@@ -12,9 +12,14 @@ namespace week4
 {
     public partial class Form1 : Form
     {
+        RealEstateEntities context = new RealEstateEntities();
+        List<Flat> Flats;
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        
     }
 }
