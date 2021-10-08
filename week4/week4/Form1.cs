@@ -18,8 +18,12 @@ namespace week4
         public Form1()
         {
             InitializeComponent();
+            LoadData();
         }
 
-        
+        void LoadData()
+        {
+            Flats = context.Flats.ToList();
+        }
     }
 }
