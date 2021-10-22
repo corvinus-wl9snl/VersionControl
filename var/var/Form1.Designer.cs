@@ -42,17 +42,17 @@ namespace var
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(369, 370);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(482, 44);
+            this.dataGridView2.Location = new System.Drawing.Point(422, 44);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(133, 370);
+            this.dataGridView2.Size = new System.Drawing.Size(377, 370);
             this.dataGridView2.TabIndex = 1;
             // 
             // Form1
