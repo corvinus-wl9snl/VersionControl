@@ -1,4 +1,5 @@
-﻿using _1029.MnbServiceReference;
+﻿using _1029.Entities;
+using _1029.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,12 @@ namespace _1029
 {
     public partial class Form1 : Form
     {
-        
+        BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
-        {
+        { 
             InitializeComponent();
             WebCall();
+            dataGridView1.DataSource = Rates;
         }
 
         void WebCall()
