@@ -36,5 +36,10 @@ namespace _1029
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
         }
+
+        void useXML()
+        {
+
+        }
     }
 }
