@@ -20,6 +20,10 @@ namespace week9
         public Form1()
         {
             InitializeComponent();
+
+            Population = ReadPopulaiton(@"C:\Temp\nép.csv");
+            BirthProbabilities = ReadBirth(@"C:\Temp\születés.csv");
+            DeathProbabilities = ReadDeath(@"C:\Temp\halál.csv");
         }
 
         public List<DeathProbability> ReadDeath(string filename)
