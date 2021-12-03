@@ -15,6 +15,8 @@ namespace week9
     public partial class Form1 : Form
     {
         Random rng = new Random(1234);
+        List<int> Male = new List<int>();
+        List<int> Female = new List<int>();
         List<Person> Population = new List<Person>();
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
@@ -25,7 +27,6 @@ namespace week9
             Population = ReadPopulaiton(@"C:\Temp\nép.csv");
             BirthProbabilities = ReadBirth(@"C:\Temp\születés.csv");
             DeathProbabilities = ReadDeath(@"C:\Temp\halál.csv");
-            Simulation();
         }
 
         private void Simulation()
@@ -36,7 +37,7 @@ namespace week9
                 // Végigmegyünk az összes személyen
                 for (int i = 0; i < Population.Count; i++)
                 {
-                    // Ide jön a szimulációs lépés
+                    SimStep(year, Population[i]);
                 }
 
                 int nbrOfMales = (from x in Population
@@ -45,8 +46,11 @@ namespace week9
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                Console.WriteLine(
-                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+                int y = 0;
+                Male[y] = nbrOfMales;
+                Female[y] = nbrOfFemales;
+                y++;
+
             }
         }
 
@@ -144,6 +148,36 @@ namespace week9
                     Population.Add(újszülött);
                 }
             }
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            Simulation();
+            DisplayResults();
+        }
+
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = openFileDialog.FileName;
+            }
+        }
+
+        public void DisplayResults()
+        {
+            for (int i = 2005; i <= numericUpDown1.Value; i++)
+            {
+                int j = 0;
+                richTextBox1.Text += "Szimulációs év:" + i + "\n\t Fiúk:" + Male[j] + "\n\t Lányok:" + Female[j] + "\n\n";
+                j++;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
