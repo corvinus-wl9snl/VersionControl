@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,8 @@ namespace whg
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
+
+        Brain winnerBrain = null;
         
         public Form1()
         {
@@ -27,6 +30,7 @@ namespace whg
 
             ga = gc.ActivateDisplay();
             Controls.Add(ga);
+            Controls.Remove(button1);
 
             gc.GameOver += Gc_GameOver;
 
@@ -40,7 +44,8 @@ namespace whg
         private void Gc_GameOver(object sender)
         {
             generation++;
-            Label label1 = new Label();
+
+            
             label1.Text = string.Format("{0}. generáció", generation);
 
             var playerList = from p in gc.GetCurrentPlayers()
@@ -48,7 +53,20 @@ namespace whg
                              select p;
             var topPerformers = playerList.Take(populationSize / 2).ToList();
 
+            var winnerList = from p in topPerformers
+                             where p.IsWinner
+                             select p;
+
+            if (winnerList.Count() > 0)
+            {
+                winnerBrain = winnerList.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                Controls.Add(button1);
+                return;
+            }
+
             gc.ResetCurrentLevel();
+
             foreach (var p in topPerformers)
             {
                 var b = p.Brain.Clone();
@@ -63,6 +81,15 @@ namespace whg
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
