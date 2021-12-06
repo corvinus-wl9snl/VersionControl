@@ -30,7 +30,7 @@ namespace whg
 
             ga = gc.ActivateDisplay();
             Controls.Add(ga);
-            Controls.Remove(button1);
+            button1.Enabled = false;
 
             gc.GameOver += Gc_GameOver;
 
@@ -61,7 +61,7 @@ namespace whg
             {
                 winnerBrain = winnerList.FirstOrDefault().Brain.Clone();
                 gc.GameOver -= Gc_GameOver;
-                Controls.Add(button1);
+                button1.Enabled = true;
                 return;
             }
 
